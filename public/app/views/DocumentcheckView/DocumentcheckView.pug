@@ -1,0 +1,16 @@
+.documentcheck
+	form
+		h1.documentcheck__title Проверить документ
+		.documentcheck__line
+			.documentcheck__caption Текст
+			textarea(name="text", minlength=100, required).documentcheck__text
+		.documentcheck__line
+			.documentcheck__caption exceptdomain
+			input(name="exceptdomain").documentcheck__exceptdomain
+		.documentcheck__line
+			.documentcheck__caption excepturl
+			input(name="excepturl").documentcheck__excepturl
+		.documentcheck__line
+			input(type="submit" class="documentcheck__send")
+		.documentcheck__line
+			.documentcheck__message

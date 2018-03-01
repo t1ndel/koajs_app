@@ -1,0 +1,17 @@
+.login
+  form.login-form
+    h1 Вход/выход
+    - if(!authorize.auth)
+      .login-form__group
+        label(for="email") Email:
+        input.login-form__control(type="email" id="email" name="email" placeholder="my@mail.com" required autofocus)
+      .login-form__group
+        label(for="password") Пароль:
+        input.login-form__control(type="password" id="password" name="password" required)
+      .login__message
+      button.btn.btn-lg.btn-primary.btn-block(type="submit") Login
+    - else
+      button.logout Выйти
+
+
+

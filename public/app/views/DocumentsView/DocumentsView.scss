@@ -1,0 +1,14 @@
+.documents {
+	padding: 15px;
+}
+.pagination {
+	&__current-page {
+		background: #ccc;
+		display: inline-block;
+		padding: 15px;
+	}
+	&__page {
+		display: inline-block;		
+		padding: 15px;		
+	}
+}

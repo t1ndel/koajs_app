@@ -1,0 +1,31 @@
+
+mixin item(doc) 
+	tr.documents__line
+		td #{doc.text}
+		td #{doc.text_uid}
+		td #{doc.exceptdomain}
+		td #{doc.excepturl}
+		td #{doc.text_unique}
+		td 
+			a(href="/document?id=" + doc._id) подроб.
+
+.documents
+	h1.documents__title Архив проверок
+	table(border="1px").documents__main
+		tr
+			th Текст
+			th UID
+			th exceptdomain		
+			th excepturl	
+			th text_unique			
+			th Подр.
+
+		each document in documents
+			+item(document)
+.pagination
+	- for (var x = 1; x <= Math.ceil(paginationInfo.count / paginationInfo.length); x++)
+		- url = "/documents?page=" + x
+		if paginationInfo.currentPage == x 
+			a(href=url, class="pagination__current-page") #{x}
+		else 
+			a(href=url class="pagination__page") #{x}
